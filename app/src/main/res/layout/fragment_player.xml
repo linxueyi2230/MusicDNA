@@ -42,7 +42,7 @@
                 android:layout_toRightOf="@+id/selected_track_image_sp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="Title"
+                android:text="@string/selected_track_title_sp"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp" />
 
@@ -55,7 +55,7 @@
                 android:layout_toLeftOf="@+id/sp_controls_container"
                 android:layout_toRightOf="@+id/selected_track_image_sp"
                 android:maxLines="1"
-                android:text="Unknown"
+                android:text="@string/selected_track_artist_sp"
                 android:textColor="#CCCCCC"
                 android:textSize="12sp" />
 
@@ -155,7 +155,7 @@
             android:fadingEdge="horizontal"
             android:maxLines="1"
             android:paddingLeft="5dp"
-            android:text="Title"
+            android:text="@string/selected_track_title_sp_AB"
             android:textColor="#FFFFFF"
             android:textSize="17sp" />
 
@@ -170,7 +170,7 @@
             android:layout_toStartOf="@+id/lyrics_icon"
             android:maxLines="1"
             android:paddingLeft="5dp"
-            android:text="Unknown"
+            android:text="@string/selected_track_artist_sp_AB"
             android:textColor="#EEEEEE"
             android:textSize="13sp" />
 

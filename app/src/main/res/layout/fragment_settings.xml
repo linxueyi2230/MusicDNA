@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="SETTINGS"
+            android:text="@string/settings_fragment_title"
             android:textColor="#FFFFFF"
             android:textSize="25sp" />
 
@@ -64,7 +64,7 @@
                     android:layout_margin="7dp"
                     android:layout_toLeftOf="@+id/density_value"
                     android:padding="5dp"
-                    android:text="DNA Density"
+                    android:text="@string/dna_density"
                     android:textColor="#FFF"
                     android:textSize="18dp" />
 
@@ -103,7 +103,7 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="7dp"
                     android:padding="5dp"
-                    android:text="Theme Color"
+                    android:text="@string/theme_color"
                     android:textColor="#FFF"
                     android:textSize="18dp" />
 
@@ -138,7 +138,7 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="7dp"
                     android:padding="5dp"
-                    android:text="Art behind the DNA"
+                    android:text="@string/art_behind_the_dna"
                     android:textColor="#FFF"
                     android:textSize="18dp" />
 
@@ -177,7 +177,7 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="7dp"
                     android:padding="5dp"
-                    android:text="Stream over Wifi only"
+                    android:text="@string/stream_over_wifi_only"
                     android:textColor="#FFF"
                     android:textSize="18dp" />
 
@@ -216,7 +216,7 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="7dp"
                     android:padding="5dp"
-                    android:text="About"
+                    android:text="@string/txt_about_2"
                     android:textColor="#FFF"
                     android:textSize="18dp" />
             </RelativeLayout>
@@ -244,7 +244,7 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="7dp"
                     android:padding="5dp"
-                    android:text="Reset settings"
+                    android:text="@string/setiings_reset"
                     android:textColor="#FFF"
                     android:textSize="18dp" />
                 <ImageView

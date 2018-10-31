@@ -9,7 +9,7 @@
         android:id="@+id/density_dialog_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DNA Density"
+        android:text="@string/density_dialog_title"
         android:textAlignment="center"
         android:textSize="18dp" />
 
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/density_dialog_title"
         android:layout_marginTop="2dp"
-        android:text="(Higher is not always better)"
+        android:text="@string/density_dialog_byline"
         android:textAlignment="center" />
 
     <LinearLayout

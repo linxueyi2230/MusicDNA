@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="FOLDER"
+                android:text="@string/folder_fragment_title"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp" />
 
@@ -87,7 +87,7 @@
                 android:gravity="bottom"
                 android:paddingBottom="1dp"
                 android:paddingLeft="12dp"
-                android:text="Folder"
+                android:text="@string/folder_title"
                 android:textAlignment="gravity"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
@@ -101,7 +101,7 @@
                 android:gravity="top"
                 android:paddingLeft="12dp"
                 android:paddingTop="1dp"
-                android:text="Songs"
+                android:text="@string/folder_tracks_text"
                 android:textAlignment="gravity"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp" />

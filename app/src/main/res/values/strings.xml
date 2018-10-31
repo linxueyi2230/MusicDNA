@@ -29,4 +29,49 @@
 
     <string name="menu_new_play_list">New Playlist...</string>
 
+    <string name="txt_getting_saved_data">Getting Saved Data</string>
+
+    <string name="density_dialog_title">Getting Saved Data</string>
+    <string name="density_dialog_byline">(Higher is not always better)</string>
+    <string name="add_to_playlist_fragment_title">NEW PLAYLIST</string>
+    <string name="add_to_playlist_search">Search</string>
+    <string name="number_selected_songs">0 selected</string>
+    <string name="clear_selected_songs_text">CLEAR</string>
+    <string name="edit_song_fragment_title">EDIT</string>
+    <string name="equalizer_fragment_title">equalizer</string>
+    <string name="fav_fragment_title">FAVOURITE</string>
+    <string name="favNoContentText">No Favourites</string>
+
+    <string name="all_folder_fragment_title">ALL FOLDERS</string>
+    <string name="folder_fragment_title">FOLDER</string>
+    <string name="folder_title">Folder</string>
+    <string name="folder_tracks_text">Songs</string>
+    <string name="local_fragment_search_box">Search</string>
+    <string name="local_fragment_title">LOCAL</string>
+    <string name="all_playlist_fragment_title">ALL PLAYLISTS</string>
+    <string name="noPlaylistContentText">No Playlists</string>
+    <string name="selected_track_title_sp">Title</string>
+    <string name="selected_track_artist_sp">Unknown</string>
+    <string name="selected_track_title_sp_AB">Title</string>
+    <string name="selected_track_artist_sp_AB">Unknown</string>
+    <string name="queue_fragment_title">QUEUE</string>
+    <string name="queue_clear_text">CLEAR</string>
+    <string name="recents_fragment_title">RECENT</string>
+    <string name="no_recent_songs">No Recent Songs</string>
+    <string name="settings_fragment_title">SETTINGS</string>
+    <string name="dna_density">DNA Density</string>
+    <string name="theme_color">Theme Color</string>
+    <string name="art_behind_the_dna">Art behind the DNA</string>
+    <string name="stream_over_wifi_only">Stream over Wifi only</string>
+    <string name="txt_about_2">About</string>
+    <string name="setiings_reset">Reset settings</string>
+
+
+
+
+
+
+
+
+
 </resources>

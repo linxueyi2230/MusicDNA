@@ -130,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="ALL PLAYLISTS"
+                android:text="@string/all_playlist_fragment_title"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp" />
 
@@ -181,7 +181,7 @@
             android:layout_marginTop="30dp"
             android:layout_weight="5"
             android:gravity="top|center_horizontal"
-            android:text="No Playlists"
+            android:text="@string/noPlaylistContentText"
             android:textColor="#DDDDDD"
             android:textSize="15dp" />
 
