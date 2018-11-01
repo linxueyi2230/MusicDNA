@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="Title"
+            android:text="@string/txt_title"
             android:textColor="#FFFFFF"
             android:textSize="14dp" />
 
@@ -59,7 +59,7 @@
             android:layout_marginTop="3dp"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="Artist"
+            android:text="@string/txt_artist"
             android:textColor="#EEEEEE"
             android:textSize="11dp" />
     </LinearLayout>

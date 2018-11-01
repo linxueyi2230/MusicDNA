@@ -7,7 +7,7 @@
         android:id="@+id/playlist_name_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Playlist1"
+        android:text="@string/playlist_name_holder"
         android:padding="5dp"
         android:textSize="18dp" />
 

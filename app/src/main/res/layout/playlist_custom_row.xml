@@ -112,7 +112,7 @@
             android:layout_marginRight="5dp"
             android:gravity="end|center_vertical"
             android:singleLine="true"
-            android:text="Playlist Name"
+            android:text="@string/playlist_name"
             android:textColor="#FFF"
             android:textSize="15sp" />
 

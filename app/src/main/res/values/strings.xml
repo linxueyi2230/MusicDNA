@@ -65,13 +65,38 @@
     <string name="stream_over_wifi_only">Stream over Wifi only</string>
     <string name="txt_about_2">About</string>
     <string name="setiings_reset">Reset settings</string>
+    <string name="album_fragment_title">album</string>
+    <string name="album_title">album</string>
+    <string name="album_tracks_text">Songs</string>
+    <string name="artist_fragment_title">artist</string>
+    <string name="artist_title">artist</string>
+    <string name="artist_tracks_text">Songs</string>
+    <string name="playlist_fragment_title">PLAYLIST</string>
+    <string name="playlist_tracks_text">Songs</string>
 
+    <string name="view_saved_dna_fragment_title">SAVED DNA</string>
+    <string name="no_saved_content_text">No Saved DNAs</string>
+    <string name="dna_automatically">To save DNAs select the save option in the bottom of the player. DNA will automatically be saved at the end of the song.</string>
+    <string name="general_song_bottom_sheet_title">Title</string>
+    <string name="general_song_bottom_sheet_artist">Artist</string>
+    <string name="txt_play">Play</string>
+    <string name="txt_play_next">Play Next</string>
+    <string name="add_to_queue">Add to Queue</string>
+    <string name="add_to_playlist">Add to Playlist</string>
+    <string name="add_to_favourites">Add to Favourites</string>
 
-
-
-
-
-
-
+    <string name="txt_title">Title</string>
+    <string name="txt_artist">Artist</string>
+    <string name="txt_share">Share</string>
+    <string name="txt_edit">Edit</string>
+    <string name="playlist_name">Playlist Name</string>
+    <string name="playlist_name_holder">Playlist1</string>
+    <string name="dialog_title">Text</string>
+    <string name="text_checkbox">Add Text to Image also</string>
+    <string name="save_image_btn">Save</string>
+    <string name="sleep_dialog_title_text">Sleep Timer</string>
+    <string name="remove_timer_button">Remove</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="set_button">Set</string>
 
 </resources>

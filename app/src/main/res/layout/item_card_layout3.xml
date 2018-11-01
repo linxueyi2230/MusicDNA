@@ -34,7 +34,7 @@
             android:layout_marginTop="5dp"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="Title"
+            android:text="@string/txt_title"
             android:textAlignment="center"
             android:textColor="#FFF"
             android:textSize="13dp" />
@@ -47,7 +47,7 @@
             android:layout_marginTop="-5dp"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="Artist"
+            android:text="@string/txt_artist"
             android:textAlignment="center"
             android:textColor="#EEE"
             android:textSize="9dp" />

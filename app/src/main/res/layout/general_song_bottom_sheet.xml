@@ -21,7 +21,7 @@
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/general_song_bottom_sheet_image"
         android:maxLines="1"
-        android:text="Title"
+        android:text="@string/general_song_bottom_sheet_title"
         android:textColor="#000"
         android:textSize="18sp" />
 
@@ -33,7 +33,7 @@
         android:layout_marginLeft="13dp"
         android:layout_marginTop="2dp"
         android:layout_toRightOf="@id/general_song_bottom_sheet_image"
-        android:text="Artist"
+        android:text="@string/general_song_bottom_sheet_artist"
         android:textColor="#444"
         android:textSize="13sp" />
 
@@ -62,7 +62,7 @@
             android:gravity="center_vertical"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
-            android:text="Play"
+            android:text="@string/txt_play"
             android:textAlignment="gravity"
             android:textColor="#111111"
             android:textSize="18sp" />
@@ -93,7 +93,7 @@
             android:layout_marginLeft="10dp"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
-            android:text="Play Next"
+            android:text="@string/txt_play_next"
             android:textColor="#111111"
             android:textSize="18sp" />
 
@@ -124,7 +124,7 @@
             android:layout_marginLeft="10dp"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
-            android:text="Add to Queue"
+            android:text="@string/add_to_queue"
             android:textColor="#111111"
             android:textSize="18sp" />
 
@@ -155,7 +155,7 @@
             android:layout_marginLeft="10dp"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
-            android:text="Add to Playlist"
+            android:text="@string/add_to_playlist"
             android:textColor="#111111"
             android:textSize="18sp" />
 
@@ -185,7 +185,7 @@
             android:layout_marginLeft="10dp"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
-            android:text="Add to Favourites"
+            android:text="@string/add_to_favourites"
             android:textColor="#111111"
             android:textSize="18sp" />
 
