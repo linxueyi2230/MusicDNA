@@ -15,4 +15,88 @@
     <string name="music_dna_short_link">http://bit.ly/musicDnaApp</string>
     <string name="license_text">MusicDNA and related material are distributed under \'Attribution-NonCommercial-ShareAlike 4.0 International license\'</string>
     <string name="license_link">https://github.com/harjot-oberai/MusicDNA/blob/master/LICENSE.md</string>
+
+    <string name="txt_about">关于</string>
+
+    <string name="menu_home">主页</string>
+    <string name="menu_local">本地音乐</string>
+    <string name="menu_play_lists">播放列表</string>
+    <string name="menu_recent">最近播放</string>
+    <string name="menu_fav">我喜欢</string>
+    <string name="menu_folder">目录</string>
+    <string name="menu_view">Saved DNA</string>
+    <string name="menu_settings">@string/action_settings</string>
+
+    <string name="menu_new_play_list">新增播放列表...</string>
+
+    <string name="txt_getting_saved_data">@string/density_dialog_title</string>
+
+    <string name="density_dialog_title">正在获取保存的数据...</string>
+    <string name="density_dialog_byline">(Higher is not always better)</string>
+    <string name="add_to_playlist_fragment_title">新建播放列表</string>
+    <string name="add_to_playlist_search">搜索</string>
+    <string name="number_selected_songs">0 已选</string>
+    <string name="clear_selected_songs_text">清除</string>
+    <string name="edit_song_fragment_title">编辑</string>
+    <string name="equalizer_fragment_title">均衡器</string>
+    <string name="fav_fragment_title">@string/menu_fav</string>
+    <string name="favNoContentText">还没有收藏的音乐哦</string>
+
+    <string name="all_folder_fragment_title">所有目录</string>
+    <string name="folder_fragment_title">目录</string>
+    <string name="folder_title">文件夹</string>
+    <string name="folder_tracks_text">歌曲</string>
+    <string name="local_fragment_search_box">@string/add_to_playlist_search</string>
+    <string name="local_fragment_title">本地</string>
+    <string name="all_playlist_fragment_title">所有列表</string>
+    <string name="noPlaylistContentText">还没有播放列表哦</string>
+    <string name="selected_track_title_sp">标题</string>
+    <string name="selected_track_artist_sp">未知</string>
+    <string name="selected_track_title_sp_AB">标题</string>
+    <string name="selected_track_artist_sp_AB">未知</string>
+    <string name="queue_fragment_title">队列</string>
+    <string name="queue_clear_text">@string/clear_selected_songs_text</string>
+    <string name="recents_fragment_title">最近播放</string>
+    <string name="no_recent_songs">最近还没播放音乐哦</string>
+    <string name="settings_fragment_title">@string/action_settings</string>
+    <string name="dna_density">DNA 密度</string>
+    <string name="theme_color">主题</string>
+    <string name="art_behind_the_dna">Art behind the DNA</string>
+    <string name="stream_over_wifi_only">仅支持在WiFi下听在线音乐哦</string>
+    <string name="txt_about_2">@string/txt_about</string>
+    <string name="setiings_reset">重置</string>
+    <string name="album_fragment_title">专辑</string>
+    <string name="album_title">@string/album_fragment_title</string>
+    <string name="album_tracks_text">歌曲</string>
+    <string name="artist_fragment_title">艺术家</string>
+    <string name="artist_title">艺术家</string>
+    <string name="artist_tracks_text">Songs</string>
+    <string name="playlist_fragment_title">播放列表</string>
+    <string name="playlist_tracks_text">歌曲</string>
+
+    <string name="view_saved_dna_fragment_title">SAVED DNA</string>
+    <string name="no_saved_content_text">No Saved DNAs</string>
+    <string name="dna_automatically">To save DNAs select the save option in the bottom of the player. DNA will automatically be saved at the end of the song.</string>
+    <string name="general_song_bottom_sheet_title">@string/selected_track_title_sp</string>
+    <string name="general_song_bottom_sheet_artist">@string/artist_fragment_title</string>
+    <string name="txt_play">播放</string>
+    <string name="txt_play_next">下一曲</string>
+    <string name="add_to_queue">添加</string>
+    <string name="add_to_playlist">添加到播放列表</string>
+    <string name="add_to_favourites">添加到我喜欢</string>
+
+    <string name="txt_title">@string/selected_track_title_sp</string>
+    <string name="txt_artist">@string/artist_fragment_title</string>
+    <string name="txt_share">分享</string>
+    <string name="txt_edit">@string/edit_song_fragment_title</string>
+    <string name="playlist_name">播放列表名</string>
+    <string name="playlist_name_holder">播放列表1</string>
+    <string name="dialog_title">Text</string>
+    <string name="text_checkbox">将文字添加到图像中</string>
+    <string name="save_image_btn">保存</string>
+    <string name="sleep_dialog_title_text">睡眠</string>
+    <string name="remove_timer_button">删除</string>
+    <string name="cancel_button">取消</string>
+    <string name="set_button">设置</string>
+
 </resources>
