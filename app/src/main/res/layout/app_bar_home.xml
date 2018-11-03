@@ -157,8 +157,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="-6dp"
-                android:layout_marginRight="-6dp"
-                android:layout_marginTop="0dp">
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="-6dp">
 
                 <TextView
                     android:id="@+id/recentsRecyclerLabel"
@@ -166,9 +166,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
-                    android:text="Recent"
+                    android:text="最近播放"
                     android:textColor="#FFF"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -177,11 +177,11 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/recentsRecyclerLabel"
                     android:layout_centerInParent="true"
-                    android:layout_marginBottom="25dp"
                     android:layout_marginTop="25dp"
-                    android:text="Nothing to Show !"
+                    android:layout_marginBottom="25dp"
+                    android:text="没有播放记录哦 !"
                     android:textColor="#888"
-                    android:textSize="13dp"
+                    android:textSize="13sp"
                     android:visibility="invisible" />
 
                 <TextView
@@ -191,7 +191,7 @@
                     android:layout_alignBaseline="@+id/recentsRecyclerLabel"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="15dp"
-                    android:text="VIEW ALL"
+                    android:text="更多"
                     android:textColor="#FFF"
                     android:textSize="13sp" />
 
@@ -217,8 +217,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/recentsRecyclerContainer"
                 android:layout_marginLeft="-6dp"
-                android:layout_marginRight="-6dp"
-                android:layout_marginTop="3dp">
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="-6dp">
 
 
                 <TextView
@@ -228,7 +228,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
-                    android:text="Playlists"
+                    android:text="播放列表"
                     android:textColor="#FFF"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -239,9 +239,9 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/playListRecyclerLabel"
                     android:layout_centerInParent="true"
-                    android:layout_marginBottom="25dp"
                     android:layout_marginTop="25dp"
-                    android:text="Nothing to Show !"
+                    android:layout_marginBottom="25dp"
+                    android:text="还没有播放列表哦 !"
                     android:textColor="#888"
                     android:textSize="13dp"
                     android:visibility="invisible" />
@@ -254,7 +254,7 @@
                     android:layout_alignBaseline="@+id/playListRecyclerLabel"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="15dp"
-                    android:text="VIEW ALL"
+                    android:text="更多"
                     android:textColor="#FFF"
                     android:textSize="13sp" />
 
@@ -293,6 +293,14 @@
                         android:alpha="1"
                         android:background="@drawable/local_card_3" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="80dp"
+                        android:text="本地音乐"
+                        android:textColor="#fff" />
+
                     <ImageView
                         android:id="@+id/local_banner_play_all"
                         android:layout_width="40dp"
@@ -320,21 +328,33 @@
                     android:layout_marginTop="0dp"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <TextView
                         android:id="@+id/favBanner"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/fav_card" />
+                        android:background="@drawable/fav_card"
+                        android:gravity="center"
+                        android:textColor="#fff" />
 
-                    <ImageView
+                    <TextView
                         android:id="@+id/recentBanner"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/recents_card" />
+                        android:background="@drawable/recents_card"
+                        android:gravity="center"
+                        android:text="最近播放"
+                        android:textColor="#fff" />
+                    <!--<ImageView-->
+                    <!--android:id="@+id/recentBanner"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/recents_card" />-->
                 </LinearLayout>
 
                 <LinearLayout
@@ -344,21 +364,27 @@
                     android:layout_marginTop="0dp"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <TextView
                         android:id="@+id/folderBanner"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/folder_card" />
+                        android:background="@drawable/folder_card"
+                        android:gravity="center"
+                        android:text="目录"
+                        android:textColor="#fff" />
 
-                    <ImageView
+                    <TextView
                         android:id="@+id/savedDNABanner"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/saved_card" />
+                        android:background="@drawable/saved_card"
+                        android:gravity="center"
+                        android:text="DNA"
+                        android:textColor="#fff" />
                 </LinearLayout>
 
             </RelativeLayout>
@@ -369,7 +395,7 @@
                 android:layout_height="40dp"
                 android:layout_below="@+id/bannerContainer"
                 android:gravity="center"
-                android:text="Music DNA"
+                android:text="音乐 DNA"
                 android:textAlignment="gravity"
                 android:textColor="#888" />
 
@@ -411,9 +437,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text="Local"
+                    android:text="本地音乐"
                     android:textColor="#FFF"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -422,9 +448,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="2"
-                    android:text="View All"
+                    android:text="更多"
                     android:textColor="#FFF"
-                    android:textSize="12dp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -435,11 +461,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/localRecyclerLabelContainer"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="25dp"
                 android:layout_marginTop="25dp"
-                android:text="Nothing to Show !"
+                android:layout_marginBottom="25dp"
+                android:text="还没有本地音乐哦!"
                 android:textColor="#DDD"
-                android:textSize="13dp"
+                android:textSize="13sp"
                 android:visibility="invisible" />
 
             <android.support.v7.widget.RecyclerView
@@ -466,8 +492,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                app:indicatorName="BallPulseIndicator"
-                app:indicatorColor="#FFF" />
+                app:indicatorColor="#FFF"
+                app:indicatorName="BallPulseIndicator" />
 
             <LinearLayout
                 android:id="@+id/streamRecyclerLabelContainer"
@@ -481,7 +507,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text="SoundCloud"
+                    android:text="云音乐"
                     android:textColor="#FFF"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -492,9 +518,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="2"
-                    android:text="View All"
+                    android:text="更多"
                     android:textColor="#FFF"
-                    android:textSize="12dp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -504,11 +530,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/streamRecyclerLabelContainer"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="25dp"
                 android:layout_marginTop="25dp"
-                android:text="Nothing to Show !"
+                android:layout_marginBottom="25dp"
+                android:text="还没有云音乐哦!"
                 android:textColor="#DDD"
-                android:textSize="13dp"
+                android:textSize="13sp"
                 android:visibility="invisible" />
 
 
@@ -517,7 +543,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/streamRecyclerLabelContainer"
-                android:padding="5dp"></android.support.v7.widget.RecyclerView>
+                android:padding="5dp" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -565,8 +591,8 @@
                 android:id="@+id/selected_track_image_sp_home"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_alignParentStart="true"
                 android:layout_below="@+id/myvisualizerview"
+                android:layout_alignParentStart="true"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="10dp"
                 android:visibility="visible"
@@ -583,7 +609,7 @@
                 android:layout_marginTop="2dp"
                 android:ellipsize="end"
                 android:singleLine="false"
-                android:text="Title"
+                android:text="标题"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="13dp" />
@@ -595,9 +621,9 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="right|center_vertical"
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="17dp"
                 android:layout_marginTop="2dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginBottom="5dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:visibility="visible" />

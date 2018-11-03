@@ -233,7 +233,7 @@ public class EqualizerFragment extends Fragment {
         mLinearLayout = (LinearLayout) view.findViewById(R.id.equalizerContainer);
 
         TextView equalizerHeading = new TextView(getContext());
-        equalizerHeading.setText("Equalizer");
+        equalizerHeading.setText("均衡器");
         equalizerHeading.setTextSize(20);
         equalizerHeading.setGravity(Gravity.CENTER_HORIZONTAL);
 
@@ -385,10 +385,10 @@ public class EqualizerFragment extends Fragment {
                 .replaceEndButton(mEndButton)
                 .setContentTitlePaint(HomeActivity.tp)
                 .setTarget(new ViewTarget(R.id.showcase_view_equalizer, getActivity()))
-                .setContentTitle("Presets")
-                .setContentText("Use one of the available presets")
+                .setContentTitle("预置")
+                .setContentText("使用一个可用的预设")
                 .build();
-        showCase.setButtonText("Next");
+        showCase.setButtonText("下一步");
         showCase.setButtonPosition(HomeActivity.lps);
         showCase.overrideButtonClick(new View.OnClickListener() {
             int count1 = 0;
@@ -399,17 +399,17 @@ public class EqualizerFragment extends Fragment {
                 switch (count1) {
                     case 1:
                         showCase.setTarget(new ViewTarget(R.id.equalizerContainer, getActivity()));
-                        showCase.setContentTitle("Equalizer Controls");
-                        showCase.setContentText("Use the seekbars to control the Individual frequencies");
+                        showCase.setContentTitle("均衡器控制");
+                        showCase.setContentText("使用搜索栏来控制各个频率");
                         showCase.setButtonPosition(HomeActivity.lps);
-                        showCase.setButtonText("Next");
+                        showCase.setButtonText("下一步");
                         break;
                     case 2:
                         showCase.setTarget(new ViewTarget(R.id.controllerBass, getActivity()));
-                        showCase.setContentTitle("Bass and Reverb");
-                        showCase.setContentText("Use these controls to control Bass and Reverb");
+                        showCase.setContentTitle("Bass与混响");
+                        showCase.setContentText("使用这些控件来控制低音和混响");
                         showCase.setButtonPosition(HomeActivity.lps);
-                        showCase.setButtonText("Done");
+                        showCase.setButtonText("完成");
                         break;
                     case 3:
                         showCase.hide();
@@ -461,7 +461,7 @@ public class EqualizerFragment extends Fragment {
                         chart.notifyDataUpdate();
                     }
                 } catch (Exception e) {
-                    Toast.makeText(ctx, "Error while updating Equalizer", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ctx, "更新均衡器时出错", Toast.LENGTH_SHORT).show();
                 }
                 HomeActivity.equalizerModel.setPresetPos(position);
             }

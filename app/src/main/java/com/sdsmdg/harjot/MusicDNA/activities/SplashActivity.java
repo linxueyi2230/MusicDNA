@@ -57,7 +57,7 @@ public class SplashActivity extends AppCompatActivity {
         if (allGranted) {
             startHomeActivity();
         } else {
-            Toast.makeText(this, "Please grant the requested permissions.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "请同意获取权限", Toast.LENGTH_SHORT).show();
             finish();
         }
     }

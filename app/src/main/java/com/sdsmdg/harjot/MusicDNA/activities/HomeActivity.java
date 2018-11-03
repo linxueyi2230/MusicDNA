@@ -302,10 +302,10 @@ public class HomeActivity extends AppCompatActivity
     RelativeLayout playlistRecyclerContainer;
 
     RelativeLayout localBanner;
-    ImageView favBanner;
-    ImageView recentBanner;
-    ImageView folderBanner;
-    ImageView savedDNABanner;
+    TextView favBanner;
+    TextView recentBanner;
+    TextView folderBanner;
+    TextView savedDNABanner;
 
     ImageView localBannerPlayAll;
 
@@ -473,7 +473,7 @@ public class HomeActivity extends AppCompatActivity
         });
 
         copyrightText = (TextView) findViewById(R.id.copyright_text);
-        copyrightText.setText("Music DNA v" + versionName);
+        copyrightText.setText("音乐 DNA v" + versionName);
 
         if (SplashActivity.tf4 != null) {
             try {
@@ -615,12 +615,12 @@ public class HomeActivity extends AppCompatActivity
         main = this;
 
         localBanner = (RelativeLayout) findViewById(R.id.localBanner);
-        favBanner = (ImageView) findViewById(R.id.favBanner);
-        recentBanner = (ImageView) findViewById(R.id.recentBanner);
-        folderBanner = (ImageView) findViewById(R.id.folderBanner);
-        savedDNABanner = (ImageView) findViewById(R.id.savedDNABanner);
+        favBanner = findViewById(R.id.favBanner);
+        recentBanner = findViewById(R.id.recentBanner);
+        folderBanner =findViewById(R.id.folderBanner);
+        savedDNABanner = findViewById(R.id.savedDNABanner);
 
-        localBannerPlayAll = (ImageView) findViewById(R.id.local_banner_play_all);
+        localBannerPlayAll = findViewById(R.id.local_banner_play_all);
 
         localBanner.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -753,13 +753,13 @@ public class HomeActivity extends AppCompatActivity
                 .replaceEndButton(mEndButton)
                 .setContentTitlePaint(tp)
                 .setTarget(new ViewTarget(R.id.recentsRecyclerLabel, this))
-                .setContentTitle("Recents and Playlists")
-                .setContentText("Here all you recent songs and playlists will be listed." +
-                        "Long press the cards or playlists for more options \n" +
+                .setContentTitle("最近播放 我的播放列表")
+                .setContentText("这里所有你最近的歌曲和播放列表将被列出." +
+                        "长按卡片或播放列表以获得更多选项 \n" +
                         "\n" +
-                        "(Press Next to continue / Press back to Hide)")
+                        "(点击下一步继续 / 按返回键隐藏)")
                 .build();
-        showCase.setButtonText("Next");
+        showCase.setButtonText("下一步");
         showCase.setButtonPosition(lps);
         showCase.overrideButtonClick(new View.OnClickListener() {
             int count1 = 0;
@@ -770,17 +770,17 @@ public class HomeActivity extends AppCompatActivity
                 switch (count1) {
                     case 1:
                         showCase.setTarget(new ViewTarget(R.id.local_banner_alt_showcase, (Activity) ctx));
-                        showCase.setContentTitle("Local Songs");
-                        showCase.setContentText("See all songs available locally, classified on basis of Artist and Album");
+                        showCase.setContentTitle("本地歌曲");
+                        showCase.setContentText("艺术家和专辑分类查看所有的本地歌曲");
                         showCase.setButtonPosition(lps);
-                        showCase.setButtonText("Next");
+                        showCase.setButtonText("下一步");
                         break;
                     case 2:
                         showCase.setTarget(new ViewTarget(searchView.getId(), (Activity) ctx));
-                        showCase.setContentTitle("Search");
-                        showCase.setContentText("Search for songs from local library and SoundCloud™");
+                        showCase.setContentTitle("搜索");
+                        showCase.setContentText("搜索本地歌曲™");
                         showCase.setButtonPosition(lps);
-                        showCase.setButtonText("Done");
+                        showCase.setButtonText("完成");
                         break;
                     case 3:
                         showCase.hide();
@@ -1473,24 +1473,31 @@ public class HomeActivity extends AppCompatActivity
             String json2 = mPrefs.getString("allPlaylists", "");
             allPlaylists = gson.fromJson(json2, AllPlaylists.class);
             Log.d("TIME", "allPlaylists");
+
             String json3 = mPrefs.getString("queue", "");
             queue = gson.fromJson(json3, Queue.class);
             Log.d("TIME", "queue");
+
             String json4 = mPrefs.getString("recentlyPlayed", "");
             recentlyPlayed = gson.fromJson(json4, RecentlyPlayed.class);
             Log.d("TIME", "recents");
+
             String json5 = mPrefs.getString("favouriteTracks", "");
             favouriteTracks = gson.fromJson(json5, Favourite.class);
             Log.d("TIME", "fav");
+
             String json6 = mPrefs.getString("queueCurrentIndex", "");
             queueCurrentIndex = gson.fromJson(json6, Integer.class);
             Log.d("TIME", "queueCurrentindex");
+
             String json8 = mPrefs.getString("settings", "");
             settings = gson.fromJson(json8, Settings.class);
             Log.d("TIME", "settings");
+
             String json9 = mPrefs.getString("equalizer", "");
             equalizerModel = gson.fromJson(json9, EqualizerModel.class);
             Log.d("TIME", "equalizer");
+
             String json = mPrefs.getString("savedDNAs", "");
             savedDNAs = gson.fromJson(json, AllSavedDNA.class);
             Log.d("TIME", "savedDNAs");
@@ -1822,51 +1829,51 @@ public class HomeActivity extends AppCompatActivity
             } else {
                 if (isLocalVisible) {
                     hideFragment("local");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isQueueVisible) {
                     hideFragment("queue");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isStreamVisible) {
                     hideFragment("stream");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isPlaylistVisible) {
                     hideFragment("playlist");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isNewPlaylistVisible) {
                     hideFragment("newPlaylist");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isEqualizerVisible) {
                     finalSelectedTracks.clear();
                     hideFragment("equalizer");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isFavouriteVisible) {
                     hideFragment("favourite");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isAllPlaylistVisible) {
                     hideFragment("allPlaylists");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isFolderContentVisible) {
                     hideFragment("folderContent");
                     setTitle("Folders");
                 } else if (isAllFolderVisible) {
                     hideFragment("allFolders");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isAllSavedDnaVisisble) {
                     hideFragment("allSavedDNAs");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isSavedDNAVisible) {
                     hideFragment("savedDNA");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isRecentVisible) {
                     hideFragment("recent");
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (isAboutVisible) {
                     hideFragment("About");
                     setTitle("Settings");
                 } else if (isSettingsVisible) {
                     hideFragment("settings");
                     new SaveSettings().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-                    setTitle("Music DNA");
+                    setTitle(R.string.title_activity_home);
                 } else if (!isPlayerTransitioning) {
                     startActivity(new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME));
                 }
@@ -2695,7 +2702,7 @@ public class HomeActivity extends AppCompatActivity
 
         // Check for sleep timer and whether it has timed out
         if (isSleepTimerEnabled && isSleepTimerTimeout) {
-            Toast.makeText(ctx, "Sleep timer timed out, closing app", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ctx, "音乐闹钟到时, 正在关闭APP", Toast.LENGTH_SHORT).show();
 
             if (playerFragment != null && playerFragment.timer != null)
                 playerFragment.timer.cancel();
@@ -2885,7 +2892,7 @@ public class HomeActivity extends AppCompatActivity
 
 
         if (isFullScreenEnabled) {
-            Toast.makeText(this, "Long Press to Exit", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "长按编辑", Toast.LENGTH_SHORT).show();
             ActionBar actionBar = getSupportActionBar();
             actionBar.hide();
         } else {
@@ -2991,7 +2998,7 @@ public class HomeActivity extends AppCompatActivity
     public void onPlaylistPlayAll() {
         onQueueItemClicked(0);
         hideFragment("playlist");
-        setTitle("Music DNA");
+        setTitle(R.string.title_activity_home);
     }
 
     @Override
@@ -3058,7 +3065,7 @@ public class HomeActivity extends AppCompatActivity
             playerFragment.snappyRecyclerView.getAdapter().notifyDataSetChanged();
             playerFragment.snappyRecyclerView.setTransparency();
         }
-        Toast.makeText(ctx, "Added " + pl.getSongList().size() + " song(s) to queue", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ctx, "添加 " + pl.getSongList().size() + " 首歌到队列", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -3146,7 +3153,7 @@ public class HomeActivity extends AppCompatActivity
             playerFragment.snappyRecyclerView.getAdapter().notifyDataSetChanged();
             playerFragment.snappyRecyclerView.setTransparency();
         }
-        Toast.makeText(ctx, "Added " + favouriteTracks.getFavourite().size() + " song(s) to queue", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ctx, "已添加 " + favouriteTracks.getFavourite().size() + " 首歌到队列", Toast.LENGTH_SHORT).show();
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3274,7 +3281,7 @@ public class HomeActivity extends AppCompatActivity
             playerFragment.snappyRecyclerView.getAdapter().notifyDataSetChanged();
             playerFragment.snappyRecyclerView.setTransparency();
         }
-        Toast.makeText(ctx, "Added " + list.size() + " song(s) to queue", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ctx, "已添加 " + list.size() + " 首歌到队列", Toast.LENGTH_SHORT).show();
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3314,7 +3321,7 @@ public class HomeActivity extends AppCompatActivity
             playerFragment.snappyRecyclerView.getAdapter().notifyDataSetChanged();
             playerFragment.snappyRecyclerView.setTransparency();
         }
-        Toast.makeText(ctx, "Added " + list.size() + " song(s) to queue", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ctx, "已添加 " + list.size() + " 首歌到队列", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -3361,7 +3368,7 @@ public class HomeActivity extends AppCompatActivity
             playerFragment.snappyRecyclerView.getAdapter().notifyDataSetChanged();
             playerFragment.snappyRecyclerView.setTransparency();
         }
-        Toast.makeText(ctx, "Added " + list.size() + " song(s) to queue", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ctx, "已添加 " + list.size() + " 首歌到队列", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -3401,7 +3408,7 @@ public class HomeActivity extends AppCompatActivity
             playerFragment.snappyRecyclerView.getAdapter().notifyDataSetChanged();
             playerFragment.snappyRecyclerView.setTransparency();
         }
-        Toast.makeText(ctx, "Added " + recentlyPlayed.getRecentlyPlayed().size() + " song(s) to queue", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ctx, "已添加 " + recentlyPlayed.getRecentlyPlayed().size() + " 首歌到队列", Toast.LENGTH_SHORT).show();
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3528,7 +3535,7 @@ public class HomeActivity extends AppCompatActivity
     public void onEditSongSave(boolean wasSaveSuccessful) {
         hideFragment("Edit");
         if (!wasSaveSuccessful) {
-            Toast.makeText(this, "Error occured while editing", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "出错了", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -3572,7 +3579,7 @@ public class HomeActivity extends AppCompatActivity
     public void deleteMediaStoreCache() {
         File dir = new File(Environment.getExternalStorageDirectory() + "/Android/data/com.android.providers.media/albumthumbs");
         if (dir.isDirectory()) {
-            Toast.makeText(this, "Clearing cache", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "正在删除缓存", Toast.LENGTH_SHORT).show();
             String[] children = dir.list();
             for (int i = 0; i < children.length; i++) {
                 new File(dir, children[i]).delete();
@@ -3691,7 +3698,7 @@ public class HomeActivity extends AppCompatActivity
         dialog.setContentView(R.layout.save_image_dialog);
 
         TextView titleText = (TextView) dialog.findViewById(R.id.dialog_title);
-        titleText.setText("Playlist Name");
+        titleText.setText("播放列表");
         if (SplashActivity.tf4 != null)
             titleText.setTypeface(SplashActivity.tf4);
 
@@ -3708,12 +3715,12 @@ public class HomeActivity extends AppCompatActivity
             public void onClick(View v) {
                 boolean isNameRepeat = false;
                 if (newName.getText().toString().trim().equals("")) {
-                    newName.setError("Enter Playlist Name!");
+                    newName.setError("请输入列表名!");
                 } else {
                     for (int i = 0; i < allPlaylists.getPlaylists().size(); i++) {
                         if (newName.getText().toString().equals(allPlaylists.getPlaylists().get(i).getPlaylistName())) {
                             isNameRepeat = true;
-                            newName.setError("Playlist with same name exists!");
+                            newName.setError("请换个名字试试!");
                             break;
                         }
                     }
@@ -3773,12 +3780,12 @@ public class HomeActivity extends AppCompatActivity
             public void onClick(View v) {
                 boolean isNameRepeat = false;
                 if (newName.getText().toString().trim().equals("")) {
-                    newName.setError("Enter Playlist Name!");
+                    newName.setError("请输入列表名!");
                 } else {
                     for (int i = 0; i < allPlaylists.getPlaylists().size(); i++) {
                         if (newName.getText().toString().equals(allPlaylists.getPlaylists().get(i).getPlaylistName())) {
                             isNameRepeat = true;
-                            newName.setError("Playlist with same name exists!");
+                            newName.setError("请换个名字试试!");
                             break;
                         }
                     }
@@ -3809,7 +3816,7 @@ public class HomeActivity extends AppCompatActivity
     public void showAddToPlaylistDialog(final UnifiedTrack track) {
         final Dialog dialog = new Dialog(ctx);
         dialog.setContentView(R.layout.add_to_playlist_dialog);
-        dialog.setTitle("Add to Playlist");
+        dialog.setTitle("添加到播放列表");
 
         ListView lv = (ListView) dialog.findViewById(R.id.playlist_list);
         AddToPlaylistAdapter adapter;
@@ -3835,11 +3842,11 @@ public class HomeActivity extends AppCompatActivity
                         playlistsRecycler.setVisibility(View.VISIBLE);
                         playlistNothingText.setVisibility(View.INVISIBLE);
                         pAdapter.notifyDataSetChanged();
-                        Toast.makeText(ctx, "Added to Playlist : " + temp.getPlaylistName(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ctx, "已添加 : " + temp.getPlaylistName(), Toast.LENGTH_SHORT).show();
                         new SavePlaylists().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                         dialog.dismiss();
                     } else {
-                        Toast.makeText(ctx, "Song already present in Playlist", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ctx, "列表中已有该歌曲", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -3856,12 +3863,12 @@ public class HomeActivity extends AppCompatActivity
             public void onClick(View v) {
                 boolean isNameRepeat = false;
                 if (text.getText().toString().trim().equals("")) {
-                    text.setError("Enter Playlist Name!");
+                    text.setError("请输入列表名!");
                 } else {
                     for (int i = 0; i < allPlaylists.getPlaylists().size(); i++) {
                         if (text.getText().toString().equals(allPlaylists.getPlaylists().get(i).getPlaylistName())) {
                             isNameRepeat = true;
-                            text.setError("Playlist with same name exists!");
+                            text.setError("换个名字试试看!");
                             break;
                         }
                     }
@@ -3886,7 +3893,7 @@ public class HomeActivity extends AppCompatActivity
     public void showSaveQueueDialog() {
         final Dialog dialog = new Dialog(ctx);
         dialog.setContentView(R.layout.add_to_playlist_dialog);
-        dialog.setTitle("Save Queue");
+        dialog.setTitle("保存队列");
 
         ListView lv = (ListView) dialog.findViewById(R.id.playlist_list);
         lv.setVisibility(GONE);
@@ -3900,12 +3907,12 @@ public class HomeActivity extends AppCompatActivity
             public void onClick(View v) {
                 boolean isNameRepeat = false;
                 if (text.getText().toString().trim().equals("")) {
-                    text.setError("Enter Playlist Name!");
+                    text.setError("请输入列表名!");
                 } else {
                     for (int i = 0; i < allPlaylists.getPlaylists().size(); i++) {
                         if (text.getText().toString().equals(allPlaylists.getPlaylists().get(i).getPlaylistName())) {
                             isNameRepeat = true;
-                            text.setError("Playlist with same name exists!");
+                            text.setError("换个名字试试看!");
                             break;
                         }
                     }
@@ -3919,7 +3926,7 @@ public class HomeActivity extends AppCompatActivity
                         playlistNothingText.setVisibility(View.INVISIBLE);
                         pAdapter.notifyDataSetChanged();
                         new SavePlaylists().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-                        Toast.makeText(HomeActivity.this, "Queue saved!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HomeActivity.this, "已保存!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     }
                 }
@@ -4233,7 +4240,7 @@ public class HomeActivity extends AppCompatActivity
     public void hideFragment(String type) {
         if (type.equals("local")) {
             isLocalVisible = false;
-            setTitle("Music DNA");
+            setTitle(R.string.title_activity_home);
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("local");
@@ -4254,7 +4261,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("stream")) {
             isStreamVisible = false;
-            setTitle("Music DNA");
+            setTitle(R.string.title_activity_home);
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("stream");
@@ -4284,7 +4291,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("favourite")) {
             isFavouriteVisible = false;
-            setTitle("Music DNA");
+            setTitle(R.string.title_activity_home);
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("favourite");
@@ -4305,7 +4312,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("allPlaylists")) {
             isAllPlaylistVisible = false;
-            setTitle("Music DNA");
+            setTitle(R.string.title_activity_home);
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("allPlaylists");
@@ -4325,7 +4332,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("allFolders")) {
             isAllFolderVisible = false;
-            setTitle("Music DNA");
+            setTitle(R.string.title_activity_home);
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("allFolders");
@@ -4336,7 +4343,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("allSavedDNAs")) {
             isAllSavedDnaVisisble = false;
-            setTitle("Music DNA");
+            setTitle(R.string.title_activity_home);
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("allSavedDNAs");
@@ -4365,7 +4372,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("recent")) {
             isRecentVisible = false;
-            setTitle("Music DNA");
+            setTitle(R.string.title_activity_home);
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("recent");
@@ -4376,7 +4383,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (type.equals("settings")) {
             isSettingsVisible = false;
-            setTitle("Music DNA");
+            setTitle(R.string.title_activity_home);
             navigationView.setCheckedItem(R.id.nav_home);
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             android.support.v4.app.Fragment frag = fm.findFragmentByTag("settings");
@@ -4426,7 +4433,7 @@ public class HomeActivity extends AppCompatActivity
 
         navigationView.setCheckedItem(R.id.nav_home);
 
-        setTitle("Music DNA");
+        setTitle(R.string.title_activity_home);
 
     }
 
@@ -4884,7 +4891,7 @@ public class HomeActivity extends AppCompatActivity
                 timerTimeOutDuration = 0;
                 timerSetTime = 0;
                 sleepHandler.removeCallbacksAndMessages(null);
-                Toast.makeText(ctx, "Timer removed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ctx, "已删除睡眠闹钟", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });
@@ -4920,7 +4927,7 @@ public class HomeActivity extends AppCompatActivity
                         }
                     }
                 }, minutes * 60 * 1000);
-                Toast.makeText(ctx, "Timer set for " + minutes + " minutes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ctx, "设置定时器： " + minutes + " 分", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });

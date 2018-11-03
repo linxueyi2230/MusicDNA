@@ -14,7 +14,7 @@
     <item
         android:id="@+id/action_sleep"
         android:orderInCategory="200"
-        android:title="Sleep Timer"
+        android:title="音乐闹钟"
         app:showAsAction="never"/>
 
     <item
