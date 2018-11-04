@@ -69,9 +69,9 @@ public class ViewPlaylistFragment extends Fragment implements
 
         String s = "";
         if (HomeActivity.tempPlaylist.getSongList().size() > 1)
-            s = "Songs";
+            s = "首歌";
         else
-            s = "Song";
+            s = "首歌";
         songsText.setText(HomeActivity.tempPlaylist.getSongList().size() + " " + s);
 
         UnifiedTrack ut = HomeActivity.tempPlaylist.getSongList().get(0);

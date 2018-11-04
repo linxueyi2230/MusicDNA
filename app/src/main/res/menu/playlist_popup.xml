@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:icon="@android:drawable/ic_menu_search"
-        android:title="Play" />
+        android:title="播放" />
 
     <item
         android:icon="@android:drawable/ic_menu_search"
-        android:title="Add to Queue" />
+        android:title="添加到播放列表" />
 
     <item
         android:icon="@android:drawable/ic_menu_add"
-        android:title="Delete" />
+        android:title="删除" />
 
     <item
         android:icon="@android:drawable/ic_menu_add"
-        android:title="Rename" />
+        android:title="重命名" />
 </menu>

@@ -185,7 +185,8 @@ public class NewPlaylistFragment extends Fragment {
                 mCallback.onCancel();
                 atpAdapter.notifyDataSetChanged();
                 numberSelected = 0;
-                numberSelectedSongs.setText(String.valueOf(numberSelected) + " selected");
+                numberSelectedSongs.setText(String.format("已选（%s)",numberSelected));
+//                numberSelectedSongs.setText(String.valueOf(numberSelected) + " selected");
             }
         });
 
@@ -208,7 +209,8 @@ public class NewPlaylistFragment extends Fragment {
                     numberSelected++;
                 }
 
-                numberSelectedSongs.setText(String.valueOf(numberSelected) + " selected");
+                numberSelectedSongs.setText(String.format("已选（%s)",numberSelected));
+                //numberSelectedSongs.setText(String.valueOf(numberSelected) + " selected");
 
                 CheckBox cb = (CheckBox) view.findViewById(R.id.is_selected_checkbox);
                 cb.setChecked(!cb.isChecked());

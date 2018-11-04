@@ -31,7 +31,7 @@
 
     <string name="txt_getting_saved_data">@string/density_dialog_title</string>
 
-    <string name="density_dialog_title">DNA密度</string>
+    <string name="density_dialog_title">DNA比重</string>
     <string name="density_dialog_byline">(数值越高不代表越好哦)</string>
     <string name="add_to_playlist_fragment_title">新建播放列表</string>
     <string name="add_to_playlist_search">搜索</string>
@@ -59,9 +59,9 @@
     <string name="recents_fragment_title">最近播放</string>
     <string name="no_recent_songs">最近还没播放音乐哦</string>
     <string name="settings_fragment_title">@string/action_settings</string>
-    <string name="dna_density">DNA 密度</string>
+    <string name="dna_density">DNA比重</string>
     <string name="theme_color">主题</string>
-    <string name="art_behind_the_dna">DNA背后的艺术</string>
+    <string name="art_behind_the_dna">显示艺术照</string>
     <string name="stream_over_wifi_only">仅支持在WiFi下听在线音乐</string>
     <string name="txt_about_2">@string/txt_about</string>
     <string name="setiings_reset">重置</string>
