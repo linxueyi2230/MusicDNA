@@ -166,7 +166,7 @@ public class AllPlaylistsFragment extends Fragment {
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                        if (item.getTitle().equals("Play")) {
+                        if (item.getTitle().equals("播放")) {
                             HomeActivity.tempPlaylist = HomeActivity.allPlaylists.getPlaylists().get(position);
 
                             int size = HomeActivity.tempPlaylist.getSongList().size();
@@ -177,12 +177,12 @@ public class AllPlaylistsFragment extends Fragment {
                             HomeActivity.queueCurrentIndex = 0;
 
                             mCallback.onPlaylistMenuPLayAll();
-                        } else if (item.getTitle().equals("Add to Queue")) {
+                        } else if (item.getTitle().equals("添加到播放列表")) {
                             Playlist pl = HomeActivity.allPlaylists.getPlaylists().get(position);
                             for (UnifiedTrack ut : pl.getSongList()) {
                                 HomeActivity.queue.addToQueue(ut);
                             }
-                        } else if (item.getTitle().equals("Delete")) {
+                        } else if (item.getTitle().equals("删除")) {
                             HomeActivity.allPlaylists.getPlaylists().remove(position);
                             if (vpAdapter != null) {
                                 vpAdapter.notifyItemRemoved(position);
@@ -192,7 +192,7 @@ public class AllPlaylistsFragment extends Fragment {
                             }
                             new HomeActivity.SavePlaylists().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                             homeActivity.pAdapter.notifyItemRemoved(position);
-                        } else if (item.getTitle().equals("Rename")) {
+                        } else if (item.getTitle().equals("重命名")) {
                             HomeActivity.renamePlaylistNumber = position;
                             mCallback.onPlaylistRename();
                         }

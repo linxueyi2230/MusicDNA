@@ -2892,7 +2892,7 @@ public class HomeActivity extends AppCompatActivity
 
 
         if (isFullScreenEnabled) {
-            Toast.makeText(this, "长按编辑", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "长按退出全屏", Toast.LENGTH_SHORT).show();
             ActionBar actionBar = getSupportActionBar();
             actionBar.hide();
         } else {

@@ -934,7 +934,7 @@ public class PlayerFragment extends Fragment implements
                 popMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                        if (item.getTitle().equals("Full Screen")) {
+                        if (item.getTitle().equals("全屏")) {
                             if (homeActivity.isFullScreenEnabled) {
                                 homeActivity.isFullScreenEnabled = false;
                                 bottomContainer.setVisibility(View.VISIBLE);
@@ -950,9 +950,9 @@ public class PlayerFragment extends Fragment implements
                                 spToolbar.setVisibility(View.INVISIBLE);
                                 mCallback.onFullScreen();
                             }
-                        } else if (item.getTitle().equals("Settings")) {
+                        } else if (item.getTitle().equals("设置")) {
                             mCallback.onSettingsClicked();
-                        } else if (item.getTitle().equals("Add to playlist")) {
+                        } else if (item.getTitle().equals("添加到播放列表")) {
                             UnifiedTrack ut = HomeActivity.queue.getQueue().get(HomeActivity.queueCurrentIndex);
                             mCallback.addCurrentSongtoPlaylist(ut);
                         }
@@ -1097,7 +1097,7 @@ public class PlayerFragment extends Fragment implements
                                 .setContentTitle("DNA")
                                 .setContentText("现在播放的歌曲的DNA.")
                                 .build();
-                        showCase.setButtonText("Next");
+                        showCase.setButtonText("下一步");
                         showCase.setButtonPosition(homeActivity.lps);
                         showCase.overrideButtonClick(new View.OnClickListener() {
                             int count1 = -1;

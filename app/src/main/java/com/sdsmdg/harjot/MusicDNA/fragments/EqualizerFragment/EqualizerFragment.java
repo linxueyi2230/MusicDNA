@@ -427,7 +427,7 @@ public class EqualizerFragment extends Fragment {
                 R.layout.spinner_item,
                 equalizerPresetNames);
         equalizerPresetSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        equalizerPresetNames.add("Custom");
+        equalizerPresetNames.add("自定义");
 
         for (short i = 0; i < PlayerFragment.mEqualizer.getNumberOfPresets(); i++) {
             equalizerPresetNames.add(PlayerFragment.mEqualizer.getPresetName(i));
