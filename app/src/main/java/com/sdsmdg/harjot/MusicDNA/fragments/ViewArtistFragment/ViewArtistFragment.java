@@ -27,7 +27,7 @@ import com.sdsmdg.harjot.MusicDNA.MusicDNAApplication;
 import com.sdsmdg.harjot.MusicDNA.R;
 import com.sdsmdg.harjot.MusicDNA.activities.SplashActivity;
 import com.sdsmdg.harjot.MusicDNA.utilities.CommonUtils;
-import com.sdsmdg.harjot.MusicDNA.imageloader.ImageLoader;
+import com.sdsmdg.harjot.MusicDNA.imageLoader.ImageLoader;
 import com.squareup.leakcanary.RefWatcher;
 
 
@@ -114,9 +114,9 @@ public class ViewArtistFragment extends Fragment {
         int tmp = HomeActivity.tempArtist.getArtistSongs().size();
         String details1;
         if (tmp == 1) {
-            details1 = "1 Song ";
+            details1 = "1 首歌 ";
         } else {
-            details1 = tmp + " Songs ";
+            details1 = tmp + " 首歌 ";
         }
         artistTrackText.setText(details1);
 

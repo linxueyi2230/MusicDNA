@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.sdsmdg.harjot.MusicDNA.models.Album;
 import com.sdsmdg.harjot.MusicDNA.R;
-import com.sdsmdg.harjot.MusicDNA.imageloader.ImageLoader;
+import com.sdsmdg.harjot.MusicDNA.imageLoader.ImageLoader;
 
 import java.util.List;
 
@@ -44,9 +44,9 @@ public class AlbumRecyclerAdapter extends RecyclerView.Adapter<AlbumRecyclerAdap
         Album ab = albumList.get(position);
         holder.title.setText(ab.getName());
         if (ab.getAlbumSongs().size() > 1)
-            holder.artist.setText(ab.getAlbumSongs().size() + " Songs");
+            holder.artist.setText(ab.getAlbumSongs().size() + " 首歌");
         else
-            holder.artist.setText(ab.getAlbumSongs().size() + " Song");
+            holder.artist.setText(ab.getAlbumSongs().size() + " 首歌");
         holder.title.setTextColor(Color.parseColor("#DDDDDD"));
         holder.artist.setTextColor(Color.parseColor("#BBBBBB"));
         imgLoader.DisplayImage(ab.getAlbumSongs().get(0).getPath(), holder.art);

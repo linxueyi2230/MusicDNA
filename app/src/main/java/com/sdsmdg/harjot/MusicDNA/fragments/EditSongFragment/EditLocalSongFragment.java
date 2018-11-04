@@ -23,7 +23,7 @@ import com.sdsmdg.harjot.MusicDNA.R;
 import com.sdsmdg.harjot.MusicDNA.activities.SplashActivity;
 import com.sdsmdg.harjot.MusicDNA.lyrics.Lyrics;
 import com.sdsmdg.harjot.MusicDNA.utilities.CommonUtils;
-import com.sdsmdg.harjot.MusicDNA.imageloader.ImageLoader;
+import com.sdsmdg.harjot.MusicDNA.imageLoader.ImageLoader;
 import com.sdsmdg.harjot.MusicDNA.utilities.DownloadThread;
 
 import org.jaudiotagger.audio.AudioFileIO;
@@ -146,21 +146,21 @@ public class EditLocalSongFragment extends Fragment {
                     HomeActivity.editSong.setTitle(titleText.getText().toString().trim());
                     isTitleNotNull = true;
                 } else {
-                    titleText.setError("Enter a valid Title");
+                    titleText.setError("请输入标题");
                     isTitleNotNull = false;
                 }
                 if (!artistText.getText().toString().trim().equals("")) {
                     HomeActivity.editSong.setTitle(artistText.getText().toString().trim());
                     isArtistNotNull = true;
                 } else {
-                    artistText.setError("Enter a valid Artist name");
+                    artistText.setError("请输入艺术家名");
                     isArtistNotNull = false;
                 }
                 if (!albumText.getText().toString().trim().equals("")) {
                     HomeActivity.editSong.setTitle(albumText.getText().toString().trim());
                     isAlbumNotNull = true;
                 } else {
-                    albumText.setError("Enter a valid Album name");
+                    albumText.setError("请输入专辑名");
                     isAlbumNotNull = false;
                 }
                 if (isTitleNotNull && isArtistNotNull && isAlbumNotNull) {
@@ -219,7 +219,7 @@ public class EditLocalSongFragment extends Fragment {
                     }
 
                     if (!error) {
-                        Toast.makeText(ctx, "Saved", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ctx, "已保存", Toast.LENGTH_SHORT).show();
                         HomeActivity.editSong.setTitle(titleText.getText().toString().trim());
                         HomeActivity.editSong.setArtist(artistText.getText().toString().trim());
                         HomeActivity.editSong.setAlbum(albumText.getText().toString().trim());
@@ -250,11 +250,11 @@ public class EditLocalSongFragment extends Fragment {
         }
 
         if (mp3File == null) {
-            Toast.makeText(ctx, "Error in loading the file", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ctx, "加载文件失败", Toast.LENGTH_SHORT).show();
             mCallback.onEditSongSave(false);
         }
         if (mp3File != null && !mp3File.hasID3v2Tag()) {
-            Toast.makeText(ctx, "No Tags Found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ctx, "没有找到相关标签", Toast.LENGTH_SHORT).show();
             mCallback.onEditSongSave(false);
         }
 
@@ -271,7 +271,7 @@ public class EditLocalSongFragment extends Fragment {
             id3v24Tag = mp3File.getID3v2TagAsv24();
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(ctx, "Error in finding tags", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ctx, "没有找到相关标签", Toast.LENGTH_SHORT).show();
             mCallback.onEditSongSave(false);
         }
 

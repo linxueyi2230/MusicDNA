@@ -35,9 +35,9 @@ public class ArtistRecyclerAdapter extends RecyclerView.Adapter<ArtistRecyclerAd
         Artist ab = artistList.get(position);
         holder.title.setText(ab.getName());
         if (ab.getArtistSongs().size() > 1)
-            holder.numSongs.setText(ab.getArtistSongs().size() + " Songs");
+            holder.numSongs.setText(ab.getArtistSongs().size() + " 首歌");
         else
-            holder.numSongs.setText(ab.getArtistSongs().size() + " Song");
+            holder.numSongs.setText(ab.getArtistSongs().size() + " 首歌");
     }
 
     @Override

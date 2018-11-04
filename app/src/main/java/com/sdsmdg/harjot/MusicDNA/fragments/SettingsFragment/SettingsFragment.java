@@ -117,16 +117,16 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 final android.app.AlertDialog alertDialog = new android.app.AlertDialog.Builder(view.getContext()).create();
-                alertDialog.setTitle("Reset settings?");
-                alertDialog.setMessage("This operation will reset all settings but playlist and other content will remain unchanged.");
-                alertDialog.setButton(android.app.AlertDialog.BUTTON_POSITIVE, "Reset",
+                alertDialog.setTitle("重置设置?");
+                alertDialog.setMessage("确定重置所有设置？");
+                alertDialog.setButton(android.app.AlertDialog.BUTTON_POSITIVE, "重置",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                             resetAllSettings();
-                            Toast.makeText(getContext(), "Settings have been reset", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "已重置设置", Toast.LENGTH_LONG).show();
                             }
                         });
-                alertDialog.setButton(android.app.AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                alertDialog.setButton(android.app.AlertDialog.BUTTON_NEGATIVE, "取消",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.cancel();
@@ -196,7 +196,7 @@ public class SettingsFragment extends Fragment {
             public void onClick(View v) {
                 final AlertDialog dialog = ColorPickerDialogBuilder
                         .with(getContext())
-                        .setTitle("Choose color")
+                        .setTitle("选择颜色")
                         .initialColor(HomeActivity.themeColor)
                         .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
                         .density(9)
@@ -207,13 +207,13 @@ public class SettingsFragment extends Fragment {
                             public void onColorSelected(int color) {
                             }
                         })
-                        .setPositiveButton("ok", new ColorPickerClickListener() {
+                        .setPositiveButton("确定", new ColorPickerClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int color, Integer[] allColors) {
                                 setHomeActivityColor(color);
                             }
                         })
-                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();

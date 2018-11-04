@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.sdsmdg.harjot.MusicDNA.activities.HomeActivity;
 import com.sdsmdg.harjot.MusicDNA.models.SavedDNA;
 import com.sdsmdg.harjot.MusicDNA.R;
-import com.sdsmdg.harjot.MusicDNA.imageloader.ImageLoader;
+import com.sdsmdg.harjot.MusicDNA.imageLoader.ImageLoader;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

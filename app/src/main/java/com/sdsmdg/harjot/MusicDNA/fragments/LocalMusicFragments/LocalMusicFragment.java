@@ -182,10 +182,10 @@ public class LocalMusicFragment extends Fragment {
                 .replaceEndButton(mEndButton)
                 .setContentTitlePaint(HomeActivity.tp)
                 .setTarget(new ViewTarget(R.id.songs_tab_alt_showcase, getActivity()))
-                .setContentTitle("All Songs")
-                .setContentText("All local Songs listed here.Click to Play.Long click for more options")
+                .setContentTitle("所有歌曲")
+                .setContentText("这里列出的所有本地歌曲。点击播放。长按更多选项。")
                 .build();
-        showCase.setButtonText("Next");
+        showCase.setButtonText("下一步");
         showCase.setButtonPosition(HomeActivity.lps);
         showCase.overrideButtonClick(new View.OnClickListener() {
             int count1 = 0;
@@ -201,9 +201,9 @@ public class LocalMusicFragment extends Fragment {
                         int margin = ((Number) (getResources().getDisplayMetrics().density * 12)).intValue();
                         lps.setMargins(margin, margin, margin, 5 + HomeActivity.navBarHeightSizeinDp);
                         showCase.setTarget(new ViewTarget(shuffleFab.getId(), getActivity()));
-                        showCase.setContentTitle("Shuffle");
-                        showCase.setContentText("Play all songs, shuffled randomly");
-                        showCase.setButtonText("Done");
+                        showCase.setContentTitle("随机播放");
+                        showCase.setContentText("随机播放所有歌曲");
+                        showCase.setButtonText("完成");
                         showCase.setButtonPosition(lps);
                         break;
                     case 2:

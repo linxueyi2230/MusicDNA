@@ -156,11 +156,11 @@ public class QueueFragment extends Fragment implements QueueRecyclerAdapter.OnDr
                 .replaceEndButton(mEndButton)
                 .setContentTitlePaint(HomeActivity.tp)
                 .setTarget(new ViewTarget(R.id.queue_alt_showcase, getActivity()))
-                .setContentTitle("Queue")
-                .setContentText("Here all songs that are currently in queue are listed." +
-                        " Use handle to reorder the Queue and swipe the song to remove from queue")
+                .setContentTitle("播放列表")
+                .setContentText("这里列出所有当前正在播放的歌曲." +
+                        " 你可以重新排序播放队列，或者侧滑删除歌曲")
                 .build();
-        showCase.setButtonText("Next");
+        showCase.setButtonText("下一步");
         showCase.setButtonPosition(HomeActivity.lps);
         showCase.overrideButtonClick(new View.OnClickListener() {
             int count1 = 0;
@@ -177,9 +177,9 @@ public class QueueFragment extends Fragment implements QueueRecyclerAdapter.OnDr
                         lps.setMargins(margin, margin, margin, 5 + HomeActivity.navBarHeightSizeinDp);
                         showCase.setButtonPosition(lps);
                         showCase.setTarget(new ViewTarget(saveQueue.getId(), getActivity()));
-                        showCase.setContentTitle("Save Queue");
-                        showCase.setContentText("Save the queue as a playlist");
-                        showCase.setButtonText("Done");
+                        showCase.setContentTitle("保存列表");
+                        showCase.setContentText("保存至播放列表");
+                        showCase.setButtonText("完成");
                         break;
                     case 2:
                         showCase.hide();

@@ -136,7 +136,7 @@ import com.sdsmdg.harjot.MusicDNA.utilities.comparators.LocalMusicComparator;
 import com.sdsmdg.harjot.MusicDNA.utilities.FileUtils;
 import com.sdsmdg.harjot.MusicDNA.utilities.MediaCacheUtils;
 import com.sdsmdg.harjot.MusicDNA.visualizers.VisualizerView;
-import com.sdsmdg.harjot.MusicDNA.imageloader.ImageLoader;
+import com.sdsmdg.harjot.MusicDNA.imageLoader.ImageLoader;
 import com.squareup.leakcanary.RefWatcher;
 
 import java.io.File;

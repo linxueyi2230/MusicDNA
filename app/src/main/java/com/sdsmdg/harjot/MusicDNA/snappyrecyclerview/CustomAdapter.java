@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import com.github.mmin18.widget.RealtimeBlurView;
 import com.sdsmdg.harjot.MusicDNA.models.UnifiedTrack;
 import com.sdsmdg.harjot.MusicDNA.R;
-import com.sdsmdg.harjot.MusicDNA.imageloader.ImageLoader;
+import com.sdsmdg.harjot.MusicDNA.imageLoader.ImageLoader;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

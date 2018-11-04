@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.sdsmdg.harjot.MusicDNA.models.LocalTrack;
 import com.sdsmdg.harjot.MusicDNA.models.MusicFolder;
 import com.sdsmdg.harjot.MusicDNA.R;
-import com.sdsmdg.harjot.MusicDNA.imageloader.ImageLoader;
+import com.sdsmdg.harjot.MusicDNA.imageLoader.ImageLoader;
 
 import java.util.List;
 

@@ -131,10 +131,10 @@ public class LocalMusicViewPagerFragment extends Fragment {
         super.onAttach(context);
 
         adapter = new MyPageAdapter(getChildFragmentManager());
-        adapter.addFragment(new LocalMusicFragment(), "Songs");
-        adapter.addFragment(new AlbumFragment(), "Albums");
-        adapter.addFragment(new ArtistFragment(), "Artists");
-        adapter.addFragment(new RecentlyAddedSongsFragment(), "Recent");
+        adapter.addFragment(new LocalMusicFragment(), "所有歌曲");
+        adapter.addFragment(new AlbumFragment(), "专辑");
+        adapter.addFragment(new ArtistFragment(), "艺术家");
+        adapter.addFragment(new RecentlyAddedSongsFragment(), "最近播放");
     }
 
     class MyPageAdapter extends FragmentPagerAdapter {

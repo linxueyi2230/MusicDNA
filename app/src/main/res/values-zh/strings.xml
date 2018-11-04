@@ -31,7 +31,7 @@
 
     <string name="txt_getting_saved_data">@string/density_dialog_title</string>
 
-    <string name="density_dialog_title">正在获取保存的数据...</string>
+    <string name="density_dialog_title">DNA密度</string>
     <string name="density_dialog_byline">(数值越高不代表越好哦)</string>
     <string name="add_to_playlist_fragment_title">新建播放列表</string>
     <string name="add_to_playlist_search">搜索</string>
@@ -75,7 +75,7 @@
     <string name="playlist_tracks_text">歌曲</string>
 
     <string name="view_saved_dna_fragment_title">保存 DNA</string>
-    <string name="no_saved_content_text">No Saved DNAs</string>
+    <string name="no_saved_content_text">没有保存DNA哦</string>
     <string name="dna_automatically">为了保存DNAs，在玩家的底部选择保存选项。DNA将自动保存在歌曲的结尾。</string>
     <string name="general_song_bottom_sheet_title">@string/selected_track_title_sp</string>
     <string name="general_song_bottom_sheet_artist">@string/artist_fragment_title</string>

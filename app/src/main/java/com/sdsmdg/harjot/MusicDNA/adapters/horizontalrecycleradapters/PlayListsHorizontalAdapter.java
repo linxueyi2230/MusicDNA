@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.sdsmdg.harjot.MusicDNA.models.Playlist;
 import com.sdsmdg.harjot.MusicDNA.models.UnifiedTrack;
 import com.sdsmdg.harjot.MusicDNA.R;
-import com.sdsmdg.harjot.MusicDNA.imageloader.ImageLoader;
+import com.sdsmdg.harjot.MusicDNA.imageLoader.ImageLoader;
 
 import java.util.List;
 

@@ -259,10 +259,10 @@ public class ViewSavedDNA extends Fragment {
                     .replaceEndButton(mEndButton)
                     .setContentTitlePaint(HomeActivity.tp)
                     .setTarget(new ViewTarget(R.id.visualizer_alt_showcase, getActivity()))
-                    .setContentTitle("Saved DNAs")
-                    .setContentText("View all your saved DNAs here")
+                    .setContentTitle("DNAs")
+                    .setContentText("在这里可以查看你的音乐DNA")
                     .build();
-            showCase.setButtonText("Next");
+            showCase.setButtonText("我知道了");
             showCase.setButtonPosition(HomeActivity.lps);
             showCase.overrideButtonClick(new View.OnClickListener() {
                 int count1 = 0;
@@ -273,17 +273,17 @@ public class ViewSavedDNA extends Fragment {
                     switch (count1) {
                         case 1:
                             showCase.setTarget(new ViewTarget(shareIcon.getId(), getActivity()));
-                            showCase.setContentTitle("Share DNA");
-                            showCase.setContentText("Share the DNA as an image with your friends");
+                            showCase.setContentTitle("分享");
+                            showCase.setContentText("分享你的音乐DNA，找到我们共同DNA");
                             showCase.setButtonPosition(HomeActivity.lps);
-                            showCase.setButtonText("Next");
+                            showCase.setButtonText("完成");
                             break;
                         case 2:
                             showCase.setTarget(new ViewTarget(saveToStorageIcon.getId(), getActivity()));
-                            showCase.setContentTitle("Save DNA");
-                            showCase.setContentText("Save the DNA as an image to your internal storage");
+                            showCase.setContentTitle("保存DNA");
+                            showCase.setContentText("保存DNA至手机");
                             showCase.setButtonPosition(HomeActivity.lps);
-                            showCase.setButtonText("Done");
+                            showCase.setButtonText("我知道了");
                             break;
                         case 3:
                             showCase.hide();
@@ -308,7 +308,7 @@ public class ViewSavedDNA extends Fragment {
             dialog.setContentView(R.layout.save_image_dialog);
 
             TextView titleText = (TextView) dialog.findViewById(R.id.dialog_title);
-            titleText.setText("Save as Image");
+            titleText.setText("保存图片");
             if (SplashActivity.tf4 != null)
                 titleText.setTypeface(SplashActivity.tf4);
 
@@ -335,7 +335,7 @@ public class ViewSavedDNA extends Fragment {
                 @Override
                 public void onClick(View v) {
                     if (text.getText().toString().trim().equals("")) {
-                        text.setError("Enter Filename");
+                        text.setError("请输入名字");
                     } else {
                         mVisualizerView2.drawText(text.getText().toString(), addTextToImage);
                         mVisualizerView2.setDrawingCacheEnabled(true);
@@ -354,7 +354,7 @@ public class ViewSavedDNA extends Fragment {
             dialog.setContentView(R.layout.save_image_dialog);
 
             TextView titleText = (TextView) dialog.findViewById(R.id.dialog_title);
-            titleText.setText("Share as Image");
+            titleText.setText("分享图片");
             if (SplashActivity.tf4 != null)
                 titleText.setTypeface(SplashActivity.tf4);
 
@@ -382,7 +382,7 @@ public class ViewSavedDNA extends Fragment {
                 @Override
                 public void onClick(View v) {
                     if (text.getText().toString().trim().equals("")) {
-                        text.setError("Enter Text");
+                        text.setError("请输入文字");
                     } else {
                         mVisualizerView2.drawText(text.getText().toString(), addTextToImage);
                         mVisualizerView2.setDrawingCacheEnabled(true);

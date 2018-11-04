@@ -1,7 +1,6 @@
 package com.sdsmdg.harjot.MusicDNA.fragments.PlayerFragment;
 
 
-import android.content.res.ColorStateList;
 import android.graphics.Canvas;
 import android.net.ConnectivityManager;
 import android.support.v4.app.Fragment;
@@ -23,7 +22,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Base64;
 import android.util.Log;
 import android.util.Pair;
@@ -57,7 +55,7 @@ import com.sdsmdg.harjot.MusicDNA.notificationmanager.AudioPlayerBroadcastReceiv
 import com.sdsmdg.harjot.MusicDNA.R;
 import com.sdsmdg.harjot.MusicDNA.utilities.DownloadThread;
 import com.sdsmdg.harjot.MusicDNA.visualizers.VisualizerView;
-import com.sdsmdg.harjot.MusicDNA.imageloader.ImageLoader;
+import com.sdsmdg.harjot.MusicDNA.imageLoader.ImageLoader;
 import com.squareup.leakcanary.RefWatcher;
 import com.squareup.picasso.Picasso;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -154,7 +152,7 @@ public class PlayerFragment extends Fragment implements
                 lyricsContent.setText(Html.fromHtml(currentLyrics.getText()));
                 lyricsStatus.setVisibility(View.GONE);
             } else {
-                lyricsStatus.setText("No Lyrics Found!");
+                lyricsStatus.setText("没有找到相关歌词!");
                 lyricsStatus.setVisibility(View.VISIBLE);
             }
         }
@@ -583,7 +581,7 @@ public class PlayerFragment extends Fragment implements
                     mVisualizerView.setVisibility(View.GONE);
                     lyricsContainer.setVisibility(View.VISIBLE);
                     lyricsLoadingIndicator.setVisibility(View.VISIBLE);
-                    lyricsStatus.setText("Searching Lyrics");
+                    lyricsStatus.setText("正在搜索歌词...");
                     lyricsStatus.setVisibility(View.VISIBLE);
                     if (currentLyrics == null) {
                         downloadThread = new DownloadThread(PlayerFragment.this, false, selected_track_artist.getText().toString(), selected_track_title.getText().toString());
@@ -915,7 +913,7 @@ public class PlayerFragment extends Fragment implements
                     mMediaPlayer.setDataSource(localTrack.getPath());
                     mMediaPlayer.prepareAsync();
                 } else {
-                    Toast.makeText(getContext(), "Error playing " + localTrack.getTitle() + ". Skipping to next track", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "歌曲播放错误： " + localTrack.getTitle() + ". 跳转到下一个轨道", Toast.LENGTH_SHORT).show();
                     mMediaPlayer.pause();
                     homeActivity.nextControllerClicked = true;
                     mCallback.onComplete();
@@ -1096,8 +1094,8 @@ public class PlayerFragment extends Fragment implements
                                 .replaceEndButton(mEndButton)
                                 .setContentTitlePaint(homeActivity.tp)
                                 .setTarget(new ViewTarget(mVisualizerView.getId(), getActivity()))
-                                .setContentTitle("The DNA")
-                                .setContentText("The DNA of the currently playing song.")
+                                .setContentTitle("DNA")
+                                .setContentText("现在播放的歌曲的DNA.")
                                 .build();
                         showCase.setButtonText("Next");
                         showCase.setButtonPosition(homeActivity.lps);
@@ -1110,28 +1108,27 @@ public class PlayerFragment extends Fragment implements
                                 switch (count1) {
                                     case 0:
                                         showCase.setTarget(new ViewTarget(mVisualizerView.getId(), getActivity()));
-                                        showCase.setContentTitle("The DNA");
-                                        showCase.setContentText("Swipe Left or Right to change Song." +
-                                                "Long Press for fullscreen");
+                                        showCase.setContentTitle("DNA");
+                                        showCase.setContentText("向左或向右滑动切换歌曲." +
+                                                "长按切换到全屏");
                                         showCase.setButtonPosition(homeActivity.lps);
-                                        showCase.setButtonText("Next");
+                                        showCase.setButtonText("下一步");
                                         break;
                                     case 1:
                                         showCase.setTarget(new ViewTarget(R.id.toggleContainer, getActivity()));
-                                        showCase.setContentTitle("The Controls");
-                                        showCase.setContentText("Equalizer \n" +
-                                                "Save DNA toggle\n" +
-                                                "Add to Favourites \n" +
-                                                "Queue");
+                                        showCase.setContentTitle("控制器");
+                                        showCase.setContentText("均衡器 \n" +
+                                                "点击保存按钮\n" +
+                                                "添加到我喜欢 \n");
                                         showCase.setButtonPosition(homeActivity.lps);
-                                        showCase.setButtonText("Done");
+                                        showCase.setButtonText("完成");
                                         break;
                                     case 2:
                                         showCase.setTarget(new ViewTarget(R.id.lyrics_icon, getActivity()));
-                                        showCase.setContentTitle("Lyrics");
-                                        showCase.setContentText("Get lyrics by tapping this icon");
+                                        showCase.setContentTitle("歌词");
+                                        showCase.setContentText("点击按钮获取歌词");
                                         showCase.setButtonPosition(homeActivity.lps);
-                                        showCase.setButtonText("Done");
+                                        showCase.setButtonText("完成");
                                         break;
                                     case 3:
                                         showCase.hide();
@@ -1338,7 +1335,7 @@ public class PlayerFragment extends Fragment implements
                     mMediaPlayer.setDataSource(localTrack.getPath());
                     mMediaPlayer.prepareAsync();
                 } else {
-                    Toast.makeText(getContext(), "Error playing " + localTrack.getTitle() + ". Skipping to next track", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "播放歌曲错误了： " + localTrack.getTitle() + ". 跳转到下一个轨道", Toast.LENGTH_SHORT).show();
                     mMediaPlayer.pause();
                     homeActivity.nextControllerClicked = true;
                     mCallback.onComplete();
@@ -1470,7 +1467,7 @@ public class PlayerFragment extends Fragment implements
                 homeActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(ctx, "DNA Saved!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ctx, "已保存", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

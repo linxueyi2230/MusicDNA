@@ -4,6 +4,7 @@ package com.sdsmdg.harjot.MusicDNA.notificationmanager;
  * Created by Harjot on 03-Jun-16.
  */
 
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +13,9 @@ import android.media.MediaMetadata;
 import android.media.Rating;
 import android.media.session.PlaybackState;
 import android.os.Binder;
+import android.os.Build;
 import android.os.Handler;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import android.app.Notification;
@@ -30,6 +33,8 @@ import com.sdsmdg.harjot.MusicDNA.activities.HomeActivity;
 import com.sdsmdg.harjot.MusicDNA.interfaces.ServiceCallbacks;
 import com.sdsmdg.harjot.MusicDNA.fragments.PlayerFragment.PlayerFragment;
 import com.sdsmdg.harjot.MusicDNA.R;
+
+import javax.xml.transform.sax.TemplatesHandler;
 
 public class MediaPlayerService extends Service implements PlayerFragment.onPlayPauseListener {
 
@@ -74,6 +79,7 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        this.compat();
         try {
             pFragment = ((HomeActivity) PlayerFragment.ctx).getPlayerFragment();
         } catch (Exception e) {
@@ -88,6 +94,24 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
         }
         handleIntent(intent);
         return super.onStartCommand(intent, flags, startId);
+    }
+
+    private void compat(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String channelId = "player";
+            String name = "播放音乐";
+            NotificationChannel channel = new NotificationChannel(channelId, name, NotificationManager.IMPORTANCE_NONE);
+            NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+            manager.createNotificationChannel(channel);
+            Notification notification = new Notification.Builder(getApplicationContext(), channelId).build();
+            Intent intent = new Intent(this, HomeActivity.class);
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId);
+            builder.setChannelId(channelId);
+            PendingIntent pending = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+            builder.setContentIntent(pending);
+            startForeground(1, notification);
+        }
     }
 
     private void handleIntent(Intent intent) {
@@ -114,6 +138,10 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
     }
 
     private void buildNotification(Notification.Action action) {
+
+
+        String channelId = "player";
+        String channelName = "播放音乐";
 
         Notification.MediaStyle style = new Notification.MediaStyle();
         style.setShowActionsInCompactView(1);
@@ -146,14 +174,21 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
             bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ic_default);
         }
 
-        Notification notification = new Notification.Builder(this)
-                .setStyle(style)
+        notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        Notification.Builder builder = new Notification.Builder(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel(channelId,channelName,NotificationManager.IMPORTANCE_NONE);
+            notificationManager.createNotificationChannel(channel);
+            builder.setChannelId(channelId);
+        }
+
+        Notification notification = builder.setStyle(style)
                 .setSmallIcon(R.drawable.ic_notification)
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .setDeleteIntent(pendingIntent)
-                .addAction(generateAction(R.drawable.ic_skip_previous_notif, "Previous", Constants.ACTION_PREVIOUS))
+                .addAction(generateAction(R.drawable.ic_skip_previous_notif, "前一首", Constants.ACTION_PREVIOUS))
                 .addAction(action)
-                .addAction(generateAction(R.drawable.ic_skip_next_notif, "Next", Constants.ACTION_NEXT))
+                .addAction(generateAction(R.drawable.ic_skip_next_notif, "下一首", Constants.ACTION_NEXT))
                 .setContentTitle(pFragment.selected_track_title.getText())
                 .setContentText(artist)
                 .setLargeIcon(bmp)
@@ -166,9 +201,6 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
             notification.flags |= Notification.FLAG_ONGOING_EVENT;
         }
 
-
-        notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
         try {
             notificationManager.notify(1, notification);
         } catch (Exception e) {
@@ -176,7 +208,6 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
         }
 
         updateMediaSession();
-
     }
 
     private Notification.Action generateAction(int icon, String title, String intentAction) {
@@ -282,7 +313,7 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
                                 pFrag.togglePlayPause();
                             }
                             pFrag.isStart = false;
-                            buildNotification(generateAction(R.drawable.ic_pause_notif, "Pause", Constants.ACTION_PAUSE));
+                            buildNotification(generateAction(R.drawable.ic_pause_notif, "暂停", Constants.ACTION_PAUSE));
                         }
                     } catch (Exception e) {
 
@@ -296,7 +327,7 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
                         PlayerFragment pFrag = pFragment;
                         if (pFrag != null) {
                             pFrag.togglePlayPause();
-                            buildNotification(generateAction(R.drawable.ic_play_notif, "Play", Constants.ACTION_PLAY));
+                            buildNotification(generateAction(R.drawable.ic_play_notif, "播放", Constants.ACTION_PLAY));
                         }
                     } catch (Exception e) {
 
@@ -313,7 +344,7 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
                             handler.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    buildNotification(generateAction(R.drawable.ic_pause_notif, "Pause", Constants.ACTION_PAUSE));
+                                    buildNotification(generateAction(R.drawable.ic_pause_notif, "暂停", Constants.ACTION_PAUSE));
                                 }
                             }, 100);
                         }
@@ -333,7 +364,7 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
                             handler.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    buildNotification(generateAction(R.drawable.ic_pause_notif, "Pause", Constants.ACTION_PAUSE));
+                                    buildNotification(generateAction(R.drawable.ic_pause_notif, "暂停", Constants.ACTION_PAUSE));
                                 }
                             }, 100);
                         }
@@ -353,7 +384,7 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            buildNotification(generateAction(R.drawable.ic_pause_notif, "Pause", Constants.ACTION_PAUSE));
+                            buildNotification(generateAction(R.drawable.ic_pause_notif, "暂停", Constants.ACTION_PAUSE));
                         }
                     }, 100);
                 }
@@ -368,7 +399,7 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            buildNotification(generateAction(R.drawable.ic_pause_notif, "Pause", Constants.ACTION_PAUSE));
+                            buildNotification(generateAction(R.drawable.ic_pause_notif, "暂停", Constants.ACTION_PAUSE));
                         }
                     }, 100);
                 }
@@ -407,9 +438,9 @@ public class MediaPlayerService extends Service implements PlayerFragment.onPlay
     @Override
     public void onPlayPause() {
         if (pFragment.mMediaPlayer != null && pFragment.mMediaPlayer.isPlaying()) {
-            buildNotification(generateAction(R.drawable.ic_pause_notif, "Pause", Constants.ACTION_PAUSE));
+            buildNotification(generateAction(R.drawable.ic_pause_notif, "暂停", Constants.ACTION_PAUSE));
         } else {
-            buildNotification(generateAction(R.drawable.ic_play_notif, "Play", Constants.ACTION_PLAY));
+            buildNotification(generateAction(R.drawable.ic_play_notif, "播放", Constants.ACTION_PLAY));
         }
     }
 

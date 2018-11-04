@@ -28,7 +28,7 @@ import com.sdsmdg.harjot.MusicDNA.MusicDNAApplication;
 import com.sdsmdg.harjot.MusicDNA.R;
 import com.sdsmdg.harjot.MusicDNA.activities.SplashActivity;
 import com.sdsmdg.harjot.MusicDNA.utilities.CommonUtils;
-import com.sdsmdg.harjot.MusicDNA.imageloader.ImageLoader;
+import com.sdsmdg.harjot.MusicDNA.imageLoader.ImageLoader;
 import com.squareup.leakcanary.RefWatcher;
 import com.squareup.picasso.Picasso;
 
@@ -143,9 +143,9 @@ public class ViewPlaylistFragment extends Fragment implements
         songsText = (TextView) view.findViewById(R.id.playlist_tracks_text);
         String s = "";
         if (HomeActivity.tempPlaylist.getSongList().size() > 1)
-            s = "Songs";
+            s = "首歌";
         else
-            s = "Song";
+            s = "首歌";
         songsText.setText(HomeActivity.tempPlaylist.getSongList().size() + " " + s);
 
         backBtn = (ImageView) view.findViewById(R.id.view_playlist_back_btn);

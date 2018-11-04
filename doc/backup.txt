@@ -1,1 +1,18 @@
 /Users/e/Android/src/MusicDNA/app/src/main/res/layout/fragment_stream_music.xml
+
+
+MusicDNA
+
+REDIRECT URI
+http://lab.aerotwist.com/canvas/music-dna/
+CLIENT ID
+7aJCWs5iCPSzF3ykjwt9mb02UHbzFKnQAQOkPEQfLRj5rEzdMGsoS9hJ7cVR2Ion
+
+CLIENT SECRET
+cPhGzDZqOR4Bxb8sVWyXvTKZN0JDWGcTHwIgjqBH-5ovP_xTtNml60rr7X3KTXCZghAhPPaFUm8sYGXtgnqNsg
+
+
+账号：MichaelMusic
+邮箱：570655893@qq.com
+密码：lin123456
+
