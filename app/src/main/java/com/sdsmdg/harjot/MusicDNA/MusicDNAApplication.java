@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 
 import com.crashlytics.android.Crashlytics;
+import com.ego.shadow.Shadow;
+import com.sdsmdg.harjot.MusicDNA.activities.HomeActivity;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -26,6 +28,7 @@ public class MusicDNAApplication extends Application {
         super.onCreate();
         Fabric.with(this, new Crashlytics());
         refWatcher = LeakCanary.install(this);
+        Shadow.init(this,"1810111915", HomeActivity.class);
     }
 
 }
