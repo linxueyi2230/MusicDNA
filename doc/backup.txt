@@ -17,8 +17,10 @@ cPhGzDZqOR4Bxb8sVWyXvTKZN0JDWGcTHwIgjqBH-5ovP_xTtNml60rr7X3KTXCZghAhPPaFUm8sYGXt
 密码：lin123456
 
 DNA 音乐
+天天音乐 多彩音乐
 
 发现你的音乐DNA
+天天享受丰富多彩音乐
 
 【音乐DNA核心功能】
 1. 全新界面，打造属于你的DNA个性首页
@@ -29,4 +31,6 @@ DNA 音乐
 好歌不断网，联网即可听国外音乐。
 4.个性播放界面
 根据歌手艺术照显示个性播放界面。
+
+新增极光推送，最新音乐时时推送
 
