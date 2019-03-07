@@ -7,7 +7,7 @@ android {
     buildToolsVersion "27.0.3"
 
     defaultConfig {
-        applicationId "com.sdsmdg.harjot.MusicDNA"
+        applicationId "com.musicdna.player"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 38
@@ -16,7 +16,7 @@ android {
         renderscriptSupportModeEnabled true
         flavorDimensions "versionCode"
         manifestPlaceholders = [
-                jpush_appkey : "6419ad4a4657b38c43000c1e"
+                jpush_appkey : "f76be380e957b6882bbdced4"
         ]
     }
 
