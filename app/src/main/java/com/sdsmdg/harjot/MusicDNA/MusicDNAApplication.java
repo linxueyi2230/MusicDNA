@@ -29,7 +29,8 @@ public class MusicDNAApplication extends Application {
         Fabric.with(this, new Crashlytics());
         refWatcher = LeakCanary.install(this);
 //        Shadow.init(this,"1810111915", HomeActivity.class);
-        Shadow.init(this,"41903071457", HomeActivity.class);//华为
+//        Shadow.init(this,"41903071457", HomeActivity.class);//华为
+        Shadow.init(this,"41903121346", HomeActivity.class);//华为
     }
 
 }
